@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../map2/Annotation.h">
+   </FileRef>
+   <FileRef
+      location = "group:../map2/Annotation.m">
+   </FileRef>
+   <FileRef
       location = "self:map2.xcodeproj">
    </FileRef>
 </Workspace>

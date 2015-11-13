@@ -14,6 +14,9 @@
 		660387AC1BF54A6100B47FAD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 660387AB1BF54A6100B47FAD /* Images.xcassets */; };
 		660387AF1BF54A6100B47FAD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 660387AD1BF54A6100B47FAD /* LaunchScreen.xib */; };
 		660387BB1BF54A6100B47FAD /* map2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 660387BA1BF54A6100B47FAD /* map2Tests.m */; };
+		660387C51BF54A7600B47FAD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 660387C41BF54A7600B47FAD /* MapKit.framework */; };
+		660387C81BF552D900B47FAD /* Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 660387C71BF552D900B47FAD /* Annotation.m */; };
+		660387CA1BF5F2C400B47FAD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 660387C91BF5F2C400B47FAD /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,10 @@
 		660387B41BF54A6100B47FAD /* map2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = map2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		660387B91BF54A6100B47FAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		660387BA1BF54A6100B47FAD /* map2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = map2Tests.m; sourceTree = "<group>"; };
+		660387C41BF54A7600B47FAD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		660387C61BF552D900B47FAD /* Annotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Annotation.h; sourceTree = "<group>"; };
+		660387C71BF552D900B47FAD /* Annotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Annotation.m; sourceTree = "<group>"; };
+		660387C91BF5F2C400B47FAD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +54,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				660387CA1BF5F2C400B47FAD /* CoreLocation.framework in Frameworks */,
+				660387C51BF54A7600B47FAD /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +72,8 @@
 		660387921BF54A6100B47FAD = {
 			isa = PBXGroup;
 			children = (
+				660387C91BF5F2C400B47FAD /* CoreLocation.framework */,
+				660387C41BF54A7600B47FAD /* MapKit.framework */,
 				6603879D1BF54A6100B47FAD /* map2 */,
 				660387B71BF54A6100B47FAD /* map2Tests */,
 				6603879C1BF54A6100B47FAD /* Products */,
@@ -86,6 +97,8 @@
 				660387A51BF54A6100B47FAD /* ViewController.h */,
 				660387A61BF54A6100B47FAD /* ViewController.m */,
 				660387A81BF54A6100B47FAD /* Main.storyboard */,
+				660387C61BF552D900B47FAD /* Annotation.h */,
+				660387C71BF552D900B47FAD /* Annotation.m */,
 				660387AB1BF54A6100B47FAD /* Images.xcassets */,
 				660387AD1BF54A6100B47FAD /* LaunchScreen.xib */,
 				6603879E1BF54A6100B47FAD /* Supporting Files */,
@@ -221,6 +234,7 @@
 			files = (
 				660387A71BF54A6100B47FAD /* ViewController.m in Sources */,
 				660387A41BF54A6100B47FAD /* AppDelegate.m in Sources */,
+				660387C81BF552D900B47FAD /* Annotation.m in Sources */,
 				660387A11BF54A6100B47FAD /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

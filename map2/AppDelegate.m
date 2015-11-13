@@ -14,8 +14,15 @@
 
 @implementation AppDelegate
 
+//@synthesize locationManager = _locationManager;
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    //Current position
+   // self.locationManager = [[CLLocationManager alloc] init];
+    //[self.locationManager requestWhenInUseAuthorization];
+    
     // Override point for customization after application launch.
     return YES;
 }
