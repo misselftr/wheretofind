@@ -29,6 +29,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.mapView.delegate = self;
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    
+#ifdef __IPHONE_8_0
+    {
+        [self.locationManager requestAlwaysAuthorization];
+    }
+#endif
+    
+    self.mapView.showsUserLocation = YES;
+    [self.mapView setMapType:MKMapTypeStandard];
+    [self.mapView setZoomEnabled:YES];
+    [self.mapView setScrollEnabled:YES];
+    
     CLLocationCoordinate2D center;
     CLLocationCoordinate2D annot;
     
@@ -42,8 +57,8 @@
         poiCoor.latitude=center.coordinate.latitude;
         poiCoor.longitude=center.coordinate.longitude;*/
         
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(center, 1000, 1000);
-    [self.mapView setRegion:viewRegion animated:(YES)];
+   // MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(center, 1000, 1000);
+    //[self.mapView setRegion:viewRegion animated:(YES)];
     
  /*   MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
     point.coordinate = poiCoordinates;
@@ -100,20 +115,48 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:YES];
 
+    self.locationManager.distanceFilter = kCLDistanceFilterNone;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [self.locationManager startUpdatingLocation];
+
+//View Area
+    MKCoordinateRegion region = { { 0.0, 0.0 }, { 0.0, 0.0 } };
+    region.center.latitude = self.locationManager.location.coordinate.latitude;
+    region.center.longitude = self.locationManager.location.coordinate.longitude;
+    region.span.longitudeDelta = 0.005f;
+    region.span.longitudeDelta = 0.005f;
+    [self.mapView setRegion:region animated:YES];
+}
+
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
+{
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 800, 800);
+    [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
+}
+
+
+// Kullanıcının koordinat bilgilerini alabilmek için.
+
+/*- (NSString *)deviceLocation {
+    return [NSString stringWithFormat:@"latitude: %f longitude: %f", self.locationManager.location.coordinate.latitude, self.locationManager.location.coordinate.longitude];
+}
+- (NSString *)deviceLat {
+    return [NSString stringWithFormat:@"%f", self.locationManager.location.coordinate.latitude];
+}
+- (NSString *)deviceLon {
+    return [NSString stringWithFormat:@"%f", self.locationManager.location.coordinate.longitude];
+}
+- (NSString *)deviceAlt {
+    return [NSString stringWithFormat:@"%f", self.locationManager.location.altitude];
+}*/
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
--(IBAction) GetLocation:(id)sender {
-
-    self.mapView.showsUserLocation = YES;
-    
-}
-
-
 
 
 @end
