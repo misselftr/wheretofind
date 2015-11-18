@@ -60,7 +60,7 @@
         
         // Create a new location object and set its props to JsonElement properties
         Location *newLocation = [[Location alloc] init];
-        newLocation.name = jsonElement[@"İsim"];
+        newLocation.name = jsonElement[@"Ad"];
         newLocation.address = jsonElement[@"Adres"];
         newLocation.latitude = jsonElement[@"Enlem"];
         newLocation.longitude = jsonElement[@"Boylam"];

@@ -17,6 +17,7 @@
 @property(nonatomic, retain) CLLocationManager *locationManager;
 
 -(void)itemsDownloaded:(NSArray *)items;
-
+//- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view;
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation;
 @end
 

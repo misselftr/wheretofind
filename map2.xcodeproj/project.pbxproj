@@ -20,6 +20,7 @@
 		669DBDE61BFBC2A5002695BD /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 669DBDE21BFBC2A5002695BD /* HomeModel.m */; };
 		669DBDE71BFBC2A5002695BD /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 669DBDE51BFBC2A5002695BD /* Location.m */; };
 		66F0FA821BFCA5570055F151 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F0FA811BFCA5570055F151 /* DetailViewController.m */; };
+		66F0FA891BFCD5210055F151 /* ico-tooth.png in Resources */ = {isa = PBXBuildFile; fileRef = 66F0FA881BFCD5210055F151 /* ico-tooth.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		669DBDE51BFBC2A5002695BD /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Location.m; path = ../Location.m; sourceTree = "<group>"; };
 		66F0FA801BFCA5570055F151 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		66F0FA811BFCA5570055F151 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		66F0FA881BFCD5210055F151 /* ico-tooth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico-tooth.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 		6603879E1BF54A6100B47FAD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				66F0FA881BFCD5210055F151 /* ico-tooth.png */,
 				6603879F1BF54A6100B47FAD /* Info.plist */,
 				660387A01BF54A6100B47FAD /* main.m */,
 			);
@@ -229,6 +232,7 @@
 			files = (
 				660387AA1BF54A6100B47FAD /* Main.storyboard in Resources */,
 				660387AF1BF54A6100B47FAD /* LaunchScreen.xib in Resources */,
+				66F0FA891BFCD5210055F151 /* ico-tooth.png in Resources */,
 				660387AC1BF54A6100B47FAD /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
