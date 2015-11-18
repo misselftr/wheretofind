@@ -1,10 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="RG9-PP-aWB">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="Iij-vE-qhY">
+            <objects>
+                <navigationController id="RG9-PP-aWB" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zek-sb-E3b">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="show" identifier="mapSegue" id="kV4-50-DlM"/>
+                        <segue destination="kZ1-qq-U10" kind="show" identifier="detailSegue" id="eSZ-db-a9C"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="khB-WB-jxD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-630" y="786"/>
+        </scene>
+        <!--Çevrenizdeki Dişçiler-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
@@ -28,13 +46,38 @@
                             <outletCollection property="gestureRecognizers" destination="6wI-8l-jk6" appends="YES" id="pSa-bk-l5w"/>
                         </connections>
                     </view>
+                    <navigationItem key="navigationItem" title="Çevrenizdeki Dişçiler" id="p2U-ao-gPd"/>
                     <connections>
                         <outlet property="mapView" destination="NUg-Ld-Dbx" id="OrF-Tw-ioh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
-                <pinchGestureRecognizer id="6wI-8l-jk6"/>
+                <pinchGestureRecognizer id="6wI-8l-jk6" customClass="I"/>
             </objects>
+            <point key="canvasLocation" x="177" y="304"/>
+        </scene>
+        <!--Dişçi Bilgileri-->
+        <scene sceneID="tyU-dx-GIK">
+            <objects>
+                <viewController id="kZ1-qq-U10" customClass="DetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5fn-xk-8yO"/>
+                        <viewControllerLayoutGuide type="bottom" id="s67-jb-FaV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hl2-OD-Ric">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Dişçi Bilgileri" id="2Bt-OQ-nan">
+                        <barButtonItem key="leftBarButtonItem" title="Geri" id="Xbx-bY-hRO"/>
+                        <barButtonItem key="rightBarButtonItem" title="Paylaş" id="5tN-yH-Fg2"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sec-VK-ypj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="177" y="1030"/>
         </scene>
     </scenes>
 </document>

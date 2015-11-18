@@ -9,11 +9,14 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "HomeModel.h"
 
-@interface ViewController : UIViewController <MKMapViewDelegate,  CLLocationManagerDelegate>
+@interface ViewController : UIViewController <MKMapViewDelegate,  CLLocationManagerDelegate, HomeModelProtocol>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property(nonatomic, retain) CLLocationManager *locationManager;
+
+-(void)itemsDownloaded:(NSArray *)items;
 
 @end
 

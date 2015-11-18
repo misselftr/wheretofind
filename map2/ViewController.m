@@ -9,19 +9,21 @@
 #import "ViewController.h"
 #import "MapKit/MapKit.h"
 #import "Annotation.h"
+#import "HomeModel.h"
+#import "Location.h"
 
 @interface ViewController ()
-
+{
+    HomeModel *_homeModel;
+    NSArray *_feedItems;
+    Location *_selectedLocation;
+    
+    
+    NSMutableArray *locations;
+    CLLocationCoordinate2D location;
+    Annotation *myAnn;
+}
 @end
-
-#define yer1_lat 41.072201
-#define yer1_lon 28.870364
-
-#define yer2_lat 41.076941
-#define yer2_lon 28.872789
-
-#define yer3_lat 41.073941
-#define yer3_lon 28.871789
 
 
 @implementation ViewController
@@ -32,6 +34,19 @@
     self.mapView.delegate = self;
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
+    
+    // Create array object and assign it to _feedItems variable
+    _feedItems = [[NSArray alloc] init];
+    
+    // Create new HomeModel object and assign it to _homeModel variable
+    _homeModel = [[HomeModel alloc] init];
+    
+    // Set this view controller object as the delegate for the home model object
+    _homeModel.delegate = self;
+    
+    // Call the download items method of the home model object
+    [_homeModel downloadItems];
+
     
 #ifdef __IPHONE_8_0
     {
@@ -44,35 +59,9 @@
     [self.mapView setZoomEnabled:YES];
     [self.mapView setScrollEnabled:YES];
     
-    CLLocationCoordinate2D center;
-    CLLocationCoordinate2D annot;
-    
-    center.latitude = 41.074847;
-    center.longitude = 28.874408;
-    
-    annot.latitude = 41.072201;
-    annot.longitude = 28.870364;
-    
-     /*   var poiCoor: CLLocationCoordinate2D!
-        poiCoor.latitude=center.coordinate.latitude;
-        poiCoor.longitude=center.coordinate.longitude;*/
-        
-   // MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(center, 1000, 1000);
-    //[self.mapView setRegion:viewRegion animated:(YES)];
-    
- /*   MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
-    point.coordinate = poiCoordinates;
-    point.title = @"Where am I?";
-    point.subtitle = @"I'm here!!!";
-    
-    [self.mapView addAnnotation:point];*/
     
     
-    NSMutableArray *locations = [[NSMutableArray alloc]init];
-    CLLocationCoordinate2D location;
-    Annotation *myAnn;
-    
-    myAnn = [[Annotation alloc]init];
+    /*myAnn = [[Annotation alloc]init];
     location.latitude = yer1_lat;
     location.longitude = yer1_lon;
     myAnn.coordinate = location;
@@ -91,7 +80,6 @@
     
     [locations addObject:myAnn];
     
-    [self.mapView addAnnotations: locations];
     
     myAnn = [[Annotation alloc]init];
     location.latitude = yer3_lat;
@@ -100,19 +88,33 @@
     myAnn.title = @"yer3";
     myAnn.subtitle=@"alb";
     
-    [locations addObject:myAnn];
+    [locations addObject:myAnn];*/
+
+    locations = [[NSMutableArray alloc]init];
+
+}
+
+-(void)itemsDownloaded:(NSArray *)items
+{
+    // This delegate method will get called when the items are finished downloading
+    
+    // Set the downloaded items to the array
+    _feedItems = items;
+    
+    for(int i=0;i<_feedItems.count;i++)
+    {
+        Location *newlot = _feedItems[i];
+        myAnn = [[Annotation alloc]init];
+        location.latitude = newlot.latitude.doubleValue;
+        location.longitude = newlot.longitude.doubleValue;
+        myAnn.coordinate = location;
+        myAnn.title = newlot.name;
+        myAnn.subtitle= newlot.address;
+        [locations addObject:myAnn];
+    }
     
     [self.mapView addAnnotations: locations];
-    
-    
-   /* MKPointAnnotation *pin = [[MKPointAnnotation alloc] init];
-    pin.coordinate = annot;
-    pin.title = @"Giyimkent";
-    pin.subtitle = @"20. Sokak";
-    
-    
-    [self.mapView addAnnotation:pin];*/
-    // Do any additional setup after loading the view, typically from a nib.
+
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -126,32 +128,16 @@
     MKCoordinateRegion region = { { 0.0, 0.0 }, { 0.0, 0.0 } };
     region.center.latitude = self.locationManager.location.coordinate.latitude;
     region.center.longitude = self.locationManager.location.coordinate.longitude;
-    region.span.longitudeDelta = 0.005f;
-    region.span.longitudeDelta = 0.005f;
+    region.span.longitudeDelta = 0.5f;
+    region.span.longitudeDelta = 0.5f;
     [self.mapView setRegion:region animated:YES];
 }
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 800, 800);
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 7800, 7800);
     [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
 }
-
-
-// Kullanıcının koordinat bilgilerini alabilmek için.
-
-/*- (NSString *)deviceLocation {
-    return [NSString stringWithFormat:@"latitude: %f longitude: %f", self.locationManager.location.coordinate.latitude, self.locationManager.location.coordinate.longitude];
-}
-- (NSString *)deviceLat {
-    return [NSString stringWithFormat:@"%f", self.locationManager.location.coordinate.latitude];
-}
-- (NSString *)deviceLon {
-    return [NSString stringWithFormat:@"%f", self.locationManager.location.coordinate.longitude];
-}
-- (NSString *)deviceAlt {
-    return [NSString stringWithFormat:@"%f", self.locationManager.location.altitude];
-}*/
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

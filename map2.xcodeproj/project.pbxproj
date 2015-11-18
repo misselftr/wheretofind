@@ -17,6 +17,9 @@
 		660387C51BF54A7600B47FAD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 660387C41BF54A7600B47FAD /* MapKit.framework */; };
 		660387C81BF552D900B47FAD /* Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 660387C71BF552D900B47FAD /* Annotation.m */; };
 		660387CA1BF5F2C400B47FAD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 660387C91BF5F2C400B47FAD /* CoreLocation.framework */; };
+		669DBDE61BFBC2A5002695BD /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 669DBDE21BFBC2A5002695BD /* HomeModel.m */; };
+		669DBDE71BFBC2A5002695BD /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 669DBDE51BFBC2A5002695BD /* Location.m */; };
+		66F0FA821BFCA5570055F151 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F0FA811BFCA5570055F151 /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,12 @@
 		660387C61BF552D900B47FAD /* Annotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Annotation.h; sourceTree = "<group>"; };
 		660387C71BF552D900B47FAD /* Annotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Annotation.m; sourceTree = "<group>"; };
 		660387C91BF5F2C400B47FAD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		669DBDE21BFBC2A5002695BD /* HomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeModel.m; path = ../HomeModel.m; sourceTree = "<group>"; };
+		669DBDE31BFBC2A5002695BD /* HomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeModel.h; path = ../HomeModel.h; sourceTree = "<group>"; };
+		669DBDE41BFBC2A5002695BD /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Location.h; path = ../Location.h; sourceTree = "<group>"; };
+		669DBDE51BFBC2A5002695BD /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Location.m; path = ../Location.m; sourceTree = "<group>"; };
+		66F0FA801BFCA5570055F151 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		66F0FA811BFCA5570055F151 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +105,12 @@
 				660387A31BF54A6100B47FAD /* AppDelegate.m */,
 				660387A51BF54A6100B47FAD /* ViewController.h */,
 				660387A61BF54A6100B47FAD /* ViewController.m */,
+				66F0FA801BFCA5570055F151 /* DetailViewController.h */,
+				66F0FA811BFCA5570055F151 /* DetailViewController.m */,
+				669DBDE31BFBC2A5002695BD /* HomeModel.h */,
+				669DBDE21BFBC2A5002695BD /* HomeModel.m */,
+				669DBDE41BFBC2A5002695BD /* Location.h */,
+				669DBDE51BFBC2A5002695BD /* Location.m */,
 				660387A81BF54A6100B47FAD /* Main.storyboard */,
 				660387C61BF552D900B47FAD /* Annotation.h */,
 				660387C71BF552D900B47FAD /* Annotation.m */,
@@ -232,10 +247,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				669DBDE61BFBC2A5002695BD /* HomeModel.m in Sources */,
 				660387A71BF54A6100B47FAD /* ViewController.m in Sources */,
 				660387A41BF54A6100B47FAD /* AppDelegate.m in Sources */,
 				660387C81BF552D900B47FAD /* Annotation.m in Sources */,
+				669DBDE71BFBC2A5002695BD /* Location.m in Sources */,
 				660387A11BF54A6100B47FAD /* main.m in Sources */,
+				66F0FA821BFCA5570055F151 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +448,7 @@
 				660387C01BF54A6100B47FAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		660387C11BF54A6100B47FAD /* Build configuration list for PBXNativeTarget "map2Tests" */ = {
 			isa = XCConfigurationList;
@@ -438,6 +457,7 @@
 				660387C31BF54A6100B47FAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
