@@ -26,6 +26,12 @@
 }
 @end
 
+#define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
+#define SYSTEM_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+#define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
+#define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
+
 
 @implementation ViewController
 
@@ -82,11 +88,31 @@
         myAnn.subtitle= newlot.address;
         [locations addObject:myAnn];
       //  NSLog(@"Value of string is %@", myAnn.title);
+
     }
     
     [self.mapView addAnnotations: locations];
 
 }
+
+//CLLocationDistance & DistanceFromLocation usage START
+/*
+-(void) locationManager:(CLLocationManager *)manager
+    didUpdateToLocation:(CLLocation *)newLocation
+           fromLocation:(CLLocation *)oldLocation
+{
+    CLLocation *caLocation = [[CLLocation alloc] initWithLatitude:location.latitude longitude:location.longitude];
+    CLLocationDistance distance = [newLocation distanceFromLocation:caLocation];
+    [self displayDistance:distance];
+}
+
+- (void) displayDistance:(NSInteger)distance
+{
+    double km = (distance / 1000.f);
+    NSString *kmInfo = [@"" stringByAppendingFormat:@"%d", (int)km];
+    
+}*/   //CLLocationDistance & DistanceFromLocation usage END
+
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
@@ -124,8 +150,8 @@
     MKCoordinateRegion region = { { 0.0, 0.0 }, { 0.0, 0.0 } };
     region.center.latitude = self.locationManager.location.coordinate.latitude;
     region.center.longitude = self.locationManager.location.coordinate.longitude;
-    region.span.longitudeDelta = 0.5f;
-    region.span.longitudeDelta = 0.5f;
+    region.span.longitudeDelta = 0.005f;
+    region.span.longitudeDelta = 0.005f;
     [self.mapView setRegion:region animated:YES];
 }
 
@@ -149,9 +175,51 @@ calloutAccessoryControlTapped:(UIControl *)control
     //deselect
     [self.mapView deselectAnnotation:ann animated:YES];
     //alert location
-    NSString *msg = [@"At the dentist" stringByAppendingFormat:@"%f %f", ann.coordinate.latitude, ann.coordinate.longitude];
-    UIAlertView *alert =  [[UIAlertView alloc]initWithTitle:@"Location" message:msg delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-    [alert show];
+    NSString *msg = [@"At the dentist " stringByAppendingFormat:@"%f %f", ann.coordinate.latitude, ann.coordinate.longitude];
+   
+    
+    
+    // Same As alertController but deprecated in iOS8
+    
+    if (SYSTEM_VERSION_LESS_THAN(@"8.0")) {
+        UIAlertView *alert =  [[UIAlertView alloc] initWithTitle:(ann.title) message:msg delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:@"Paylaş", nil];  //initWithTitle:@"Location" message:msg delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+    }
+         #ifdef __IPHONE_8_0
+        else
+    {
+        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:ann.title message:msg preferredStyle:UIAlertControllerStyleAlert];
+        //We add buttons to the alert controller by creating UIAlertActions:
+        UIAlertAction *actionOk = [UIAlertAction actionWithTitle:@"Ok"
+                                                           style:UIAlertActionStyleDefault
+                                                         handler: nil]; //You can use a block here to handle a press on this button
+        [alert addAction:actionOk];
+        [self presentViewController:alert animated:YES completion:nil];
+   }
+    #endif
+  
+    
+    
+    
+    // For customizing the button functions START
+   /* - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+        // the user clicked OK
+        if (buttonIndex == 0) {
+            // do something here...
+        }
+    }
+    
+    */  // For customizing the button functions START
+    
+    
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    // the user clicked OK
+    if (buttonIndex == 1) {
+        // do something here...
+    }
 }
 
 
