@@ -12,6 +12,7 @@
 #import "HomeModel.h"
 #import "Location.h"
 #import <MapKit/MKAnnotationView.h>
+#import "DetailViewController.h"
 
 @interface ViewController ()
 {
@@ -53,6 +54,8 @@
     
     // Call the download items method of the home model object
     [_homeModel downloadItems];
+    
+   
 
     
 #ifdef __IPHONE_8_0
@@ -172,16 +175,19 @@ calloutAccessoryControlTapped:(UIControl *)control
 {
     //functionality for annotation button
     Annotation *ann = (Annotation *)view.annotation;
-    //deselect
-    [self.mapView deselectAnnotation:ann animated:YES];
-    //alert location
-    NSString *msg = [@"At the dentist " stringByAppendingFormat:@"%f %f", ann.coordinate.latitude, ann.coordinate.longitude];
-   
     
+    
+   // NSString *msg = [@"At the dentist " stringByAppendingFormat:@"%f %f", ann.coordinate.latitude, ann.coordinate.longitude];
+    //_selectedLocation = ann.coordinate; //[@"%f", ann.coordinate.latitude];
+    //_selectedLocation.longitude = [@"" stringByAppendingFormat:@"%f",ann.coordinate.longitude];
+    myAnn = ann;
+    
+   [self performSegueWithIdentifier:@"detailSegue" sender:self];
+    [self.mapView deselectAnnotation:ann animated:YES];
     
     // Same As alertController but deprecated in iOS8
     
-    if (SYSTEM_VERSION_LESS_THAN(@"8.0")) {
+  /*  if (SYSTEM_VERSION_LESS_THAN(@"8.0")) {
         UIAlertView *alert =  [[UIAlertView alloc] initWithTitle:(ann.title) message:msg delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:@"Paylaş", nil];  //initWithTitle:@"Location" message:msg delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
     }
@@ -197,7 +203,7 @@ calloutAccessoryControlTapped:(UIControl *)control
         [alert addAction:actionOk];
         [self presentViewController:alert animated:YES completion:nil];
    }
-    #endif
+    #endif */
   
     
     
@@ -215,13 +221,26 @@ calloutAccessoryControlTapped:(UIControl *)control
     
 }
 
-- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+/*- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
     // the user clicked OK
     if (buttonIndex == 1) {
         // do something here...
     }
 }
+*/
+#pragma mark Segue
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+    
+    // Get reference to the destination view controller
+    DetailViewController *detailVC = segue.destinationViewController;
+    
+    // Set the property to the selected location so when the view for
+    // detail view controller loads, it can access that property to get the feeditem obj
+    detailVC.newlyAnn = myAnn;
+}
 
 
 
