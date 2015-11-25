@@ -200,7 +200,11 @@
                                 <action selector="backBtn:" destination="FxD-z9-upV" id="WfC-t2-1RR"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Paylaş" id="mci-gz-wL1"/>
+                        <barButtonItem key="rightBarButtonItem" title="Tarif Al" id="mci-gz-wL1">
+                            <connections>
+                                <action selector="gotoBtn:" destination="FxD-z9-upV" id="Ypi-3T-RgZ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="addressLabel" destination="DwA-lA-23j" id="oJ6-OO-gTz"/>

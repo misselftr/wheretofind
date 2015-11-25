@@ -22,7 +22,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *contactLabel;
 
 - (IBAction)backBtn:(id)sender;
-
-- (IBAction)shareButton:(id)sender;
+- (IBAction)gotoBtn:(id)sender;
 
 @end
