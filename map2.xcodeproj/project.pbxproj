@@ -17,6 +17,16 @@
 		660387C51BF54A7600B47FAD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 660387C41BF54A7600B47FAD /* MapKit.framework */; };
 		660387C81BF552D900B47FAD /* Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 660387C71BF552D900B47FAD /* Annotation.m */; };
 		660387CA1BF5F2C400B47FAD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 660387C91BF5F2C400B47FAD /* CoreLocation.framework */; };
+		664BB2D21C05E24000EB4D20 /* ipad2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 664BB2CF1C05E24000EB4D20 /* ipad2x.jpg */; };
+		664BB2D31C05E24000EB4D20 /* ipadmini1x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 664BB2D01C05E24000EB4D20 /* ipadmini1x.jpg */; };
+		664BB2D41C05E24000EB4D20 /* ipadPro2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 664BB2D11C05E24000EB4D20 /* ipadPro2x.jpg */; };
+		664BB2D91C05E25200EB4D20 /* 2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 664BB2D51C05E25200EB4D20 /* 2x.jpg */; };
+		664BB2DA1C05E25200EB4D20 /* 3x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 664BB2D61C05E25200EB4D20 /* 3x.jpg */; };
+		664BB2DB1C05E25200EB4D20 /* app_store_logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 664BB2D71C05E25200EB4D20 /* app_store_logo.jpg */; };
+		664BB2DC1C05E25200EB4D20 /* dentist_logo_root.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 664BB2D81C05E25200EB4D20 /* dentist_logo_root.jpg */; };
+		664BB2DE1C05E30E00EB4D20 /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 664BB2DD1C05E30E00EB4D20 /* Images-2.xcassets */; };
+		664BB2E11C05E3AE00EB4D20 /* 2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 664BB2DF1C05E3AE00EB4D20 /* 2x.png */; };
+		664BB2E21C05E3AE00EB4D20 /* 3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 664BB2E01C05E3AE00EB4D20 /* 3x.png */; };
 		669DBDE61BFBC2A5002695BD /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 669DBDE21BFBC2A5002695BD /* HomeModel.m */; };
 		669DBDE71BFBC2A5002695BD /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 669DBDE51BFBC2A5002695BD /* Location.m */; };
 		66F0FA821BFCA5570055F151 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F0FA811BFCA5570055F151 /* DetailViewController.m */; };
@@ -51,6 +61,16 @@
 		660387C61BF552D900B47FAD /* Annotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Annotation.h; sourceTree = "<group>"; };
 		660387C71BF552D900B47FAD /* Annotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Annotation.m; sourceTree = "<group>"; };
 		660387C91BF5F2C400B47FAD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		664BB2CF1C05E24000EB4D20 /* ipad2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ipad2x.jpg; sourceTree = "<group>"; };
+		664BB2D01C05E24000EB4D20 /* ipadmini1x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ipadmini1x.jpg; sourceTree = "<group>"; };
+		664BB2D11C05E24000EB4D20 /* ipadPro2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ipadPro2x.jpg; sourceTree = "<group>"; };
+		664BB2D51C05E25200EB4D20 /* 2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2x.jpg; sourceTree = "<group>"; };
+		664BB2D61C05E25200EB4D20 /* 3x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3x.jpg; sourceTree = "<group>"; };
+		664BB2D71C05E25200EB4D20 /* app_store_logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = app_store_logo.jpg; sourceTree = "<group>"; };
+		664BB2D81C05E25200EB4D20 /* dentist_logo_root.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dentist_logo_root.jpg; sourceTree = "<group>"; };
+		664BB2DD1C05E30E00EB4D20 /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
+		664BB2DF1C05E3AE00EB4D20 /* 2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2x.png; sourceTree = "<group>"; };
+		664BB2E01C05E3AE00EB4D20 /* 3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3x.png; sourceTree = "<group>"; };
 		669DBDE21BFBC2A5002695BD /* HomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeModel.m; path = ../HomeModel.m; sourceTree = "<group>"; };
 		669DBDE31BFBC2A5002695BD /* HomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeModel.h; path = ../HomeModel.h; sourceTree = "<group>"; };
 		669DBDE41BFBC2A5002695BD /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Location.h; path = ../Location.h; sourceTree = "<group>"; };
@@ -118,6 +138,7 @@
 				660387C71BF552D900B47FAD /* Annotation.m */,
 				660387AB1BF54A6100B47FAD /* Images.xcassets */,
 				660387AD1BF54A6100B47FAD /* LaunchScreen.xib */,
+				664BB2DD1C05E30E00EB4D20 /* Images-2.xcassets */,
 				6603879E1BF54A6100B47FAD /* Supporting Files */,
 			);
 			path = map2;
@@ -126,6 +147,15 @@
 		6603879E1BF54A6100B47FAD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				664BB2D51C05E25200EB4D20 /* 2x.jpg */,
+				664BB2D61C05E25200EB4D20 /* 3x.jpg */,
+				664BB2D71C05E25200EB4D20 /* app_store_logo.jpg */,
+				664BB2D81C05E25200EB4D20 /* dentist_logo_root.jpg */,
+				664BB2DF1C05E3AE00EB4D20 /* 2x.png */,
+				664BB2E01C05E3AE00EB4D20 /* 3x.png */,
+				664BB2CF1C05E24000EB4D20 /* ipad2x.jpg */,
+				664BB2D01C05E24000EB4D20 /* ipadmini1x.jpg */,
+				664BB2D11C05E24000EB4D20 /* ipadPro2x.jpg */,
 				66F0FA881BFCD5210055F151 /* ico-tooth.png */,
 				6603879F1BF54A6100B47FAD /* Info.plist */,
 				660387A01BF54A6100B47FAD /* main.m */,
@@ -199,6 +229,7 @@
 				TargetAttributes = {
 					6603879A1BF54A6100B47FAD = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = E4D6WFLSS7;
 					};
 					660387B31BF54A6100B47FAD = {
 						CreatedOnToolsVersion = 6.4;
@@ -230,10 +261,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				664BB2E21C05E3AE00EB4D20 /* 3x.png in Resources */,
+				664BB2E11C05E3AE00EB4D20 /* 2x.png in Resources */,
+				664BB2DB1C05E25200EB4D20 /* app_store_logo.jpg in Resources */,
 				660387AA1BF54A6100B47FAD /* Main.storyboard in Resources */,
+				664BB2D41C05E24000EB4D20 /* ipadPro2x.jpg in Resources */,
+				664BB2D31C05E24000EB4D20 /* ipadmini1x.jpg in Resources */,
+				664BB2DC1C05E25200EB4D20 /* dentist_logo_root.jpg in Resources */,
+				664BB2DA1C05E25200EB4D20 /* 3x.jpg in Resources */,
+				664BB2DE1C05E30E00EB4D20 /* Images-2.xcassets in Resources */,
 				660387AF1BF54A6100B47FAD /* LaunchScreen.xib in Resources */,
+				664BB2D21C05E24000EB4D20 /* ipad2x.jpg in Resources */,
 				66F0FA891BFCD5210055F151 /* ico-tooth.png in Resources */,
 				660387AC1BF54A6100B47FAD /* Images.xcassets in Resources */,
+				664BB2D91C05E25200EB4D20 /* 2x.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,9 +424,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = map2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -393,9 +438,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = map2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

@@ -9,8 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "Location.h"
 #import "Annotation.h"
+#import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
+
 
 @interface DetailViewController : UIViewController
+
 
 @property (weak, nonatomic) Annotation *newlyAnn;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;

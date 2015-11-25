@@ -10,13 +10,11 @@
 #import "ViewController.h"
 #import "HomeModel.h"
 #import "Location.h"
-#import "Annotation.h"
+
 
 @interface DetailViewController ()
 {
-    Location *_selectedLocation;
-    HomeModel *_homeModel;
-    Annotation *_myAnn;
+
 }
 
 @end
@@ -25,14 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
-   // _homeModel = [[HomeModel alloc] init];
-    _homeModel = [[HomeModel alloc] init];
-  //  _homeModel.delegate = self;
-   [_homeModel downloadItems];
-    
-    
+    // Do any additional setup after loading the view. 
     
     _nameLabel.text = _newlyAnn.title;
     _addressLabel.text = _newlyAnn.subtitle;
