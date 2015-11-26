@@ -19,13 +19,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NUg-Ld-Dbx">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <animations/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="108" width="401" height="492"/>
-                                </variation>
-                            </mapView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Zef-ug-gRs">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <animations/>
@@ -38,6 +31,13 @@
                                     <rect key="frame" x="0.0" y="64" width="400" height="44"/>
                                 </variation>
                             </searchBar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NUg-Ld-Dbx">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="108" width="400" height="492"/>
+                                </variation>
+                            </mapView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -81,9 +81,20 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="35" y="204" width="54" height="20.5"/>
-                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Adresi:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07l-Gg-uJD">
+                                <rect key="frame" x="71" y="111" width="54" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adı: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9w-8w-7av">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWU-H9-Ut8">
                                 <rect key="frame" x="150" y="75" width="42" height="21"/>
@@ -105,92 +116,60 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="150" y="204" width="42" height="20.5"/>
-                                </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Adresi:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07l-Gg-uJD">
-                                <rect key="frame" x="71" y="111" width="54" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="71" y="164" width="53.5" height="20.5"/>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adı: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9w-8w-7av">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="VtC-JF-mBn">
-                                <rect key="frame" x="-160" y="-81" width="320" height="162"/>
-                                <animations/>
-                                <date key="date" timeIntervalSinceReferenceDate="469985634.761199">
-                                    <!--2015-11-23 15:33:54 +0000-->
-                                </date>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="334" width="400" height="162"/>
-                                </variation>
-                            </datePicker>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="dWU-H9-Ut8" firstAttribute="top" secondItem="jxv-gq-728" secondAttribute="bottom" constant="55" id="3KY-v7-BHi"/>
+                            <constraint firstItem="ZXw-No-vMC" firstAttribute="top" secondItem="07l-Gg-uJD" secondAttribute="bottom" constant="19.5" id="3qY-fq-Jyz"/>
                             <constraint firstAttribute="centerX" secondItem="dWU-H9-Ut8" secondAttribute="centerX" constant="29" id="ADZ-hP-Jp2"/>
-                            <constraint firstItem="ZXw-No-vMC" firstAttribute="top" secondItem="07l-Gg-uJD" secondAttribute="bottom" constant="65" id="AO9-lh-Fex"/>
-                            <constraint firstItem="Ohs-BB-Qtx" firstAttribute="top" secondItem="DwA-lA-23j" secondAttribute="bottom" constant="65" id="CYe-nz-HgU"/>
                             <constraint firstItem="ZXw-No-vMC" firstAttribute="leading" secondItem="y4M-WL-oqv" secondAttribute="leadingMargin" constant="55" id="K58-Ay-Wzb"/>
                             <constraint firstItem="S9w-8w-7av" firstAttribute="top" secondItem="jxv-gq-728" secondAttribute="bottom" constant="55" id="SOi-nJ-Vr4"/>
                             <constraint firstItem="Ohs-BB-Qtx" firstAttribute="leading" secondItem="ZXw-No-vMC" secondAttribute="trailing" constant="25" id="UNS-cY-9Ly"/>
                             <constraint firstItem="07l-Gg-uJD" firstAttribute="leading" secondItem="y4M-WL-oqv" secondAttribute="leadingMargin" constant="55" id="UuX-FL-R6D"/>
                             <constraint firstItem="DwA-lA-23j" firstAttribute="leading" secondItem="07l-Gg-uJD" secondAttribute="trailing" constant="25" id="WYf-xp-rMB"/>
-                            <constraint firstItem="ZXw-No-vMC" firstAttribute="top" secondItem="07l-Gg-uJD" secondAttribute="bottom" constant="19.5" id="YJV-Hf-wKA"/>
+                            <constraint firstItem="Ohs-BB-Qtx" firstAttribute="top" secondItem="DwA-lA-23j" secondAttribute="bottom" constant="19" id="e4h-GP-DQA"/>
                             <constraint firstItem="S9w-8w-7av" firstAttribute="leading" secondItem="y4M-WL-oqv" secondAttribute="leadingMargin" constant="55" id="kFM-nB-Cqr"/>
                             <constraint firstItem="DwA-lA-23j" firstAttribute="top" secondItem="dWU-H9-Ut8" secondAttribute="bottom" constant="25" id="mVp-n4-CUK"/>
+                            <constraint firstItem="07l-Gg-uJD" firstAttribute="top" secondItem="S9w-8w-7av" secondAttribute="bottom" constant="24.5" id="ocO-kY-b0u"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="S9w-8w-7av"/>
-                                <exclude reference="VtC-JF-mBn"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="SOi-nJ-Vr4"/>
                                 <exclude reference="kFM-nB-Cqr"/>
                                 <exclude reference="UuX-FL-R6D"/>
+                                <exclude reference="ocO-kY-b0u"/>
                                 <exclude reference="3KY-v7-BHi"/>
                                 <exclude reference="ADZ-hP-Jp2"/>
+                                <exclude reference="3qY-fq-Jyz"/>
+                                <exclude reference="K58-Ay-Wzb"/>
                                 <exclude reference="WYf-xp-rMB"/>
                                 <exclude reference="mVp-n4-CUK"/>
-                                <exclude reference="AO9-lh-Fex"/>
-                                <exclude reference="K58-Ay-Wzb"/>
-                                <exclude reference="YJV-Hf-wKA"/>
-                                <exclude reference="CYe-nz-HgU"/>
                                 <exclude reference="UNS-cY-9Ly"/>
+                                <exclude reference="e4h-GP-DQA"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="S9w-8w-7av"/>
-                                <include reference="VtC-JF-mBn"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="SOi-nJ-Vr4"/>
                                 <include reference="kFM-nB-Cqr"/>
                                 <include reference="UuX-FL-R6D"/>
+                                <include reference="ocO-kY-b0u"/>
                                 <include reference="3KY-v7-BHi"/>
                                 <include reference="ADZ-hP-Jp2"/>
+                                <include reference="3qY-fq-Jyz"/>
+                                <include reference="K58-Ay-Wzb"/>
                                 <include reference="WYf-xp-rMB"/>
                                 <include reference="mVp-n4-CUK"/>
-                                <include reference="AO9-lh-Fex"/>
-                                <include reference="K58-Ay-Wzb"/>
-                                <include reference="YJV-Hf-wKA"/>
-                                <include reference="CYe-nz-HgU"/>
                                 <include reference="UNS-cY-9Ly"/>
+                                <include reference="e4h-GP-DQA"/>
                             </mask>
                         </variation>
                     </view>
@@ -220,6 +199,7 @@
         <scene sceneID="H29-GN-zgx">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cbx-Te-UGp" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zTD-n9-Uag">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

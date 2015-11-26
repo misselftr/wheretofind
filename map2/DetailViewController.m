@@ -28,7 +28,42 @@
     _nameLabel.text = _newlyAnn.title;
     _addressLabel.text = _newlyAnn.subtitle;
     
+ /*   UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    btn.frame = CGRectMake(80,100,160,50);
+    [btn setTitle:@"Open placemark" forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(openActionSheet:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];*/
+    
 }
+
+/*-(void)openActionSheet:(id)sender {
+    //give the user a choice of Apple or Google Maps
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"Open in Maps" delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:@"Apple Maps",@"Google Maps", nil];
+    [sheet showInView:self.view];
+}
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    //coordinates for the place we want to display
+    CLLocationCoordinate2D dentistLocation = CLLocationCoordinate2DMake(_newlyAnn.coordinate.latitude,_newlyAnn.coordinate.longitude);
+    if (buttonIndex==0) {
+        //Apple Maps, using the MKMapItem class
+        MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:dentistLocation addressDictionary:nil];
+        MKMapItem *item = [[MKMapItem alloc] initWithPlacemark:placemark];
+        item.name = _newlyAnn.title;
+        [item openInMapsWithLaunchOptions:nil];
+    } else if (buttonIndex==1) {
+        //Google Maps
+        //construct a URL using the comgooglemaps schema
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"comgooglemaps://?center=%f,%f",dentistLocation.latitude,dentistLocation.longitude]];
+        if (![[UIApplication sharedApplication] canOpenURL:url]) {
+            NSLog(@"Google Maps app is not installed");
+            NSURL *url = [NSURL URLWithString:@"http://maps.google.com/?q=%f%f;_newlyAnn.coordinate.latitude,_newlyAnn.coordinate.longitude"];
+            [[UIApplication sharedApplication] openURL:url];
+            //left as an exercise for the reader: open the Google Maps mobile website instead!
+        } else {
+            [[UIApplication sharedApplication] openURL:url];
+        }
+    }
+}*/
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -55,6 +90,44 @@
 
 - (IBAction)gotoBtn:(id)sender {
     // Check for iOS 6
+    
+    CLLocationCoordinate2D dentistLocation = CLLocationCoordinate2DMake(_newlyAnn.coordinate.latitude,_newlyAnn.coordinate.longitude);
+    
+    UIAlertController *view=   [UIAlertController
+                                 alertControllerWithTitle:_newlyAnn.title
+                                 message:@"Yol tarifi al"
+                                 preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *apple = [UIAlertAction
+                         actionWithTitle:@"Haritalar"
+                         style:UIAlertActionStyleDefault
+                         handler:^(UIAlertAction * action)
+                         {
+                             //Do some thing here
+                             [view dismissViewControllerAnimated:YES completion:nil];
+                             //Apple Maps, using the MKMapItem class
+                             MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:dentistLocation addressDictionary:nil];
+                             MKMapItem *item = [[MKMapItem alloc] initWithPlacemark:placemark];
+                             item.name = _newlyAnn.title;
+                             [item openInMapsWithLaunchOptions:nil];
+                             
+                         }];
+
+    
+    UIAlertAction *cancel = [UIAlertAction
+                             actionWithTitle:@"İptal"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {
+                                 [view dismissViewControllerAnimated:YES completion:nil];
+                                 
+                             }];
+    
+    
+    [view addAction:apple];
+    [view addAction:cancel];
+    [self presentViewController:view animated:YES completion:nil];
+    
+    
     Class mapItemClass = [MKMapItem class];
     if (mapItemClass && [mapItemClass respondsToSelector:@selector(openMapsWithItems:launchOptions:)])
     {
@@ -62,32 +135,13 @@
         [geocoder geocodeAddressString:_newlyAnn.title
                      completionHandler:^(NSArray *placemarks, NSError *error) {
                          
-                         // Convert the CLPlacemark to an MKPlacemark
-                         // Note: There's no error checking for a failed geocode
-                         CLPlacemark *geocodedPlacemark = [placemarks objectAtIndex:0];
-                         MKPlacemark *placemark = [[MKPlacemark alloc]
-                                                   initWithCoordinate:geocodedPlacemark.location.coordinate
-                                                   addressDictionary:geocodedPlacemark.addressDictionary];
-                         
-                         // Create a map item for the geocoded address to pass to Maps app
-                         MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
-                         [mapItem setName:geocodedPlacemark.name];
-                         
-                         // Set the directions mode to "Driving"
-                         // Can use MKLaunchOptionsDirectionsModeWalking instead
-                         NSDictionary *launchOptions = @{MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving};
-                         
-                         // Get the "Current User Location" MKMapItem
-                         MKMapItem *currentLocationMapItem = [MKMapItem mapItemForCurrentLocation];
-                         
-                         // Pass the current location and destination map items to the Maps app
-                         // Set the direction mode in the launchOptions dictionary
-                         [MKMapItem openMapsWithItems:@[currentLocationMapItem, mapItem] launchOptions:launchOptions];
                          
                      }];
     }
     
     
 }
+
+
 
 @end
