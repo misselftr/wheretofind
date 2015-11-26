@@ -53,7 +53,13 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Çevrenizdeki Dişçiler" id="p2U-ao-gPd"/>
+                    <navigationItem key="navigationItem" title="Çevrenizdeki Dişçiler" id="p2U-ao-gPd">
+                        <barButtonItem key="rightBarButtonItem" image="locate3.png" id="lYF-wD-2bc">
+                            <connections>
+                                <action selector="reset:" destination="vXZ-lx-hvc" id="K6x-5n-Qfa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="NUg-Ld-Dbx" id="OrF-Tw-ioh"/>
                         <segue destination="FxD-z9-upV" kind="show" identifier="detailSegue" id="y0E-E0-ufO"/>
@@ -216,4 +222,7 @@
             <point key="canvasLocation" x="-745.5" y="488"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="locate3.png" width="34" height="34"/>
+    </resources>
 </document>

@@ -15,6 +15,7 @@
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property(nonatomic, retain) CLLocationManager *locationManager;
+- (IBAction)reset:(id)sender;
 
 -(void)itemsDownloaded:(NSArray *)items;
 //- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view;

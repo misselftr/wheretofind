@@ -22,6 +22,7 @@
 		664BB2E61C05E4CC00EB4D20 /* 58x58.png in Resources */ = {isa = PBXBuildFile; fileRef = 664BB2E31C05E4CC00EB4D20 /* 58x58.png */; };
 		664BB2E71C05E4CC00EB4D20 /* 80x80.png in Resources */ = {isa = PBXBuildFile; fileRef = 664BB2E41C05E4CC00EB4D20 /* 80x80.png */; };
 		664BB2E81C05E4CC00EB4D20 /* 87x87.png in Resources */ = {isa = PBXBuildFile; fileRef = 664BB2E51C05E4CC00EB4D20 /* 87x87.png */; };
+		664BB2EE1C075B9000EB4D20 /* locate3.png in Resources */ = {isa = PBXBuildFile; fileRef = 664BB2ED1C075B9000EB4D20 /* locate3.png */; };
 		669DBDE61BFBC2A5002695BD /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 669DBDE21BFBC2A5002695BD /* HomeModel.m */; };
 		669DBDE71BFBC2A5002695BD /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 669DBDE51BFBC2A5002695BD /* Location.m */; };
 		66F0FA821BFCA5570055F151 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F0FA811BFCA5570055F151 /* DetailViewController.m */; };
@@ -61,6 +62,7 @@
 		664BB2E31C05E4CC00EB4D20 /* 58x58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 58x58.png; sourceTree = "<group>"; };
 		664BB2E41C05E4CC00EB4D20 /* 80x80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 80x80.png; sourceTree = "<group>"; };
 		664BB2E51C05E4CC00EB4D20 /* 87x87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 87x87.png; sourceTree = "<group>"; };
+		664BB2ED1C075B9000EB4D20 /* locate3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = locate3.png; sourceTree = "<group>"; };
 		669DBDE21BFBC2A5002695BD /* HomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeModel.m; path = ../HomeModel.m; sourceTree = "<group>"; };
 		669DBDE31BFBC2A5002695BD /* HomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeModel.h; path = ../HomeModel.h; sourceTree = "<group>"; };
 		669DBDE41BFBC2A5002695BD /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Location.h; path = ../Location.h; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 			children = (
 				664BB2E31C05E4CC00EB4D20 /* 58x58.png */,
 				664BB2E41C05E4CC00EB4D20 /* 80x80.png */,
+				664BB2ED1C075B9000EB4D20 /* locate3.png */,
 				664BB2E51C05E4CC00EB4D20 /* 87x87.png */,
 				664BB2DF1C05E3AE00EB4D20 /* 2x.png */,
 				664BB2E01C05E3AE00EB4D20 /* 3x.png */,
@@ -251,6 +254,7 @@
 				660387AA1BF54A6100B47FAD /* Main.storyboard in Resources */,
 				664BB2E71C05E4CC00EB4D20 /* 80x80.png in Resources */,
 				664BB2E81C05E4CC00EB4D20 /* 87x87.png in Resources */,
+				664BB2EE1C075B9000EB4D20 /* locate3.png in Resources */,
 				660387AF1BF54A6100B47FAD /* LaunchScreen.xib in Resources */,
 				66F0FA891BFCD5210055F151 /* ico-tooth.png in Resources */,
 				664BB2E61C05E4CC00EB4D20 /* 58x58.png in Resources */,

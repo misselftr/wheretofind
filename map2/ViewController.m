@@ -42,6 +42,9 @@
     self.mapView.delegate = self;
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    
+    [self.locationManager startUpdatingLocation];
     
     // Create array object and assign it to _feedItems variable
     _feedItems = [[NSArray alloc] init];
@@ -55,7 +58,7 @@
     // Call the download items method of the home model object
     [_homeModel downloadItems];
     
-   
+    
 
     
 #ifdef __IPHONE_8_0
@@ -70,6 +73,13 @@
     [self.mapView setScrollEnabled:YES];
 
     locations = [[NSMutableArray alloc]init];
+
+}
+
+- (IBAction)reset:(id)sender {
+    
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(self.mapView.userLocation.coordinate, 7800, 7800);
+    [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
 
 }
 
@@ -128,7 +138,7 @@
     MKPinAnnotationView *view = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"pin"];
     
     //change pin color
-    view.pinColor = MKPinAnnotationColorGreen;
+    view.pinColor = MKPinAnnotationColorRed;
    
     //enable and animate
     view.enabled = YES;
@@ -145,23 +155,32 @@
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:YES];
 
-    self.locationManager.distanceFilter = kCLDistanceFilterNone;
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    [self.locationManager startUpdatingLocation];
-
-//View Area
+    
     MKCoordinateRegion region = { { 0.0, 0.0 }, { 0.0, 0.0 } };
-    region.center.latitude = self.locationManager.location.coordinate.latitude;
-    region.center.longitude = self.locationManager.location.coordinate.longitude;
-    region.span.longitudeDelta = 0.005f;
-    region.span.longitudeDelta = 0.005f;
+    region.center.latitude = myAnn.coordinate.latitude;
+    region.center.longitude = myAnn.coordinate.longitude;
+    region.span.longitudeDelta = 0.008f;
+    region.span.longitudeDelta = 0.008f;
     [self.mapView setRegion:region animated:YES];
 }
 
+    
+   // self.locationManager.distanceFilter = kCLDistanceFilterNone;
+   // self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+   // [self.locationManager startUpdatingLocation];
+
+//View Area
+
+
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
+    
+    static dispatch_once_t onceToken; dispatch_once(&onceToken, ^{
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 7800, 7800);
-    [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
+        [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
+    });
+   // MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 7800, 7800);
+   // [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
