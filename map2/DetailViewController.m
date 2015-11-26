@@ -28,6 +28,23 @@
     _nameLabel.text = _newlyAnn.title;
     _addressLabel.text = _newlyAnn.subtitle;
     
+    //Somon
+    UIColor *somonColour = [[UIColor alloc]initWithRed:255.0/255.0 green:102.0/255.0 blue:102.0/255.0 alpha:1.0];
+   
+    //Cyan
+    UIColor *colour = [[UIColor alloc]initWithRed:70.0/255.0 green:178.0/255.0 blue:162.0/255.0 alpha:1.0];
+    
+    //Soluk yeşil
+    UIColor *lastColour = [[UIColor alloc]initWithRed:163.0/255.0 green:217.0/255.0 blue:208.0/255.0 alpha:1.0];
+    
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
+    
+    self.navigationController.navigationBar.barTintColor = somonColour;
+    
+    self.view.backgroundColor = colour;
+    
+    
+    
  /*   UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     btn.frame = CGRectMake(80,100,160,50);
     [btn setTitle:@"Open placemark" forState:UIControlStateNormal];

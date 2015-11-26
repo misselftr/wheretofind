@@ -58,7 +58,20 @@
     // Call the download items method of the home model object
     [_homeModel downloadItems];
     
+    //self.navigationController.navigationBar setTintColor:(UIColor * _Nullable);
     
+    //Somon
+    UIColor *somonColour = [[UIColor alloc]initWithRed:255.0/255.0 green:102.0/255.0 blue:102.0/255.0 alpha:1.0];
+    
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
+    
+    self.navigationController.navigationBar.barTintColor = somonColour;
+    
+    //Cyan
+    UIColor *colour = [[UIColor alloc]initWithRed:70.0/255.0 green:178.0/255.0 blue:162.0/255.0 alpha:1.0];
+    
+    self.view.backgroundColor = colour;
+    self.title = @"Diş Hekimleri";
 
     
 #ifdef __IPHONE_8_0
@@ -75,6 +88,7 @@
     locations = [[NSMutableArray alloc]init];
 
 }
+
 
 - (IBAction)reset:(id)sender {
     
@@ -138,12 +152,13 @@
     MKPinAnnotationView *view = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"pin"];
     
     //change pin color
-    view.pinColor = MKPinAnnotationColorRed;
+    //view.pinColor = MKPinAnnotationColorRed;
    
     //enable and animate
     view.enabled = YES;
     view.animatesDrop = YES;
     view.canShowCallout = YES;
+    
     
     //image button
     UIImageView *ImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"ico-tooth.png"]];
