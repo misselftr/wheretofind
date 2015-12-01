@@ -2,11 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "son1-1.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "locate7.png",
+      "filename" : "son1.png",
       "scale" : "2x"
     },
     {

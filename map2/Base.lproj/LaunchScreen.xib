@@ -21,9 +21,6 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash6.png" translatesAutoresizingMaskIntoConstraints="NO" id="i8o-J7-U2H">
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                     <animations/>
-                    <variation key="widthClass=compact" misplaced="YES">
-                        <rect key="frame" x="56" y="78" width="280" height="261"/>
-                    </variation>
                 </imageView>
             </subviews>
             <animations/>

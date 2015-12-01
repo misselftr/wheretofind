@@ -10,11 +10,12 @@
 #import "ViewController.h"
 #import "HomeModel.h"
 #import "Location.h"
+#import "MapKit/MapKit.h"
 
 
 @interface DetailViewController ()
 {
-
+Annotation *myAnn;
 }
 
 @end
@@ -25,26 +26,51 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view. 
     
+    self.mapView.delegate = self;
     _nameLabel.text = _newlyAnn.title;
     _addressLabel.text = _newlyAnn.subtitle;
+    _contactLabel.text = @"05325177882";
     
     //Somon
-    UIColor *somonColour = [[UIColor alloc]initWithRed:255.0/255.0 green:102.0/255.0 blue:102.0/255.0 alpha:1.0];
+   // UIColor *somonColour = [[UIColor alloc]initWithRed:255.0/255.0 green:102.0/255.0 blue:102.0/255.0 alpha:1.0];
    
     //Cyan
-    UIColor *colour = [[UIColor alloc]initWithRed:70.0/255.0 green:178.0/255.0 blue:162.0/255.0 alpha:1.0];
+   // UIColor *colour = [[UIColor alloc]initWithRed:70.0/255.0 green:178.0/255.0 blue:162.0/255.0 alpha:1.0];
     
     //Soluk yeşil
-    UIColor *lastColour = [[UIColor alloc]initWithRed:163.0/255.0 green:217.0/255.0 blue:208.0/255.0 alpha:1.0];
+   // UIColor *lastColour = [[UIColor alloc]initWithRed:163.0/255.0 green:217.0/255.0 blue:208.0/255.0 alpha:1.0];
+    
+    //turkuaz
+   // UIColor *turkuazColour = [[UIColor alloc]initWithRed:45.0/255.0 green:255.0/255.0 blue:254.0/255.0 alpha:1.0];
+    
+    //koyu mavi
+    UIColor *boldblueColour = [[UIColor alloc]initWithRed:51.0/255.0 green:130.0/255.0 blue:171.0/255.0 alpha:1.0];
     
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
     
-    self.navigationController.navigationBar.barTintColor = somonColour;
+    self.navigationController.navigationBar.barTintColor = boldblueColour;
     
-    self.view.backgroundColor = colour;
+    self.view.backgroundColor = boldblueColour;
+    
+    
+   MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(_newlyAnn.coordinate, 5000, 5000);
+    [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
     
     
     
+    MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+    point.coordinate = _newlyAnn.coordinate;
+    point.title = _newlyAnn.title;
+    point.subtitle = _newlyAnn.subtitle;
+    
+    [self.mapView addAnnotation:point];
+    
+    
+    //  NSLog(@"Value of string is %@", myAnn.title);
+
+
+
+
  /*   UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     btn.frame = CGRectMake(80,100,160,50);
     [btn setTitle:@"Open placemark" forState:UIControlStateNormal];
@@ -160,5 +186,10 @@
 }
 
 
-
+- (IBAction)callBtn:(id)sender {
+    
+    //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"telprompt: %s",(_contactLabel.text)]];
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"telprompt://%@",_contactLabel.text]]];
+    }
 @end

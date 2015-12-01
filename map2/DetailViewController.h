@@ -13,9 +13,10 @@
 #import <CoreLocation/CoreLocation.h>
 
 
-@interface DetailViewController : UIViewController
+@interface DetailViewController : UIViewController <MKMapViewDelegate>
+- (IBAction)callBtn:(id)sender;
 
-
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) Annotation *newlyAnn;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *addressLabel;

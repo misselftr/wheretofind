@@ -1,0 +1,33 @@
+
+/* Class = "UILabel"; text = "Adresi:"; ObjectID = "07l-Gg-uJD"; */
+"07l-Gg-uJD.text" = "Adresi:";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "DwA-lA-23j"; */
+"DwA-lA-23j.text" = "Label";
+
+/* Class = "UIBarButtonItem"; title = "Geri"; ObjectID = "JdB-uz-9VO"; */
+"JdB-uz-9VO.title" = "Geri";
+
+/* Class = "UILabel"; text = "Telefon Numarası"; ObjectID = "Ohs-BB-Qtx"; */
+"Ohs-BB-Qtx.text" = "Telefon Numarası";
+
+/* Class = "UILabel"; text = "Adı: "; ObjectID = "S9w-8w-7av"; */
+"S9w-8w-7av.text" = "Adı: ";
+
+/* Class = "UILabel"; text = "İletişim"; ObjectID = "ZXw-No-vMC"; */
+"ZXw-No-vMC.text" = "İletişim";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "dWU-H9-Ut8"; */
+"dWU-H9-Ut8.text" = "Label";
+
+/* Class = "UIBarButtonItem"; title = "Tarif Al"; ObjectID = "mci-gz-wL1"; */
+"mci-gz-wL1.title" = "Tarif Al";
+
+/* Class = "UINavigationItem"; title = "Diş Hekimleri"; ObjectID = "p2U-ao-gPd"; */
+"p2U-ao-gPd.title" = "Diş Hekimleri";
+
+/* Class = "UINavigationItem"; title = "Diş Hekimi Bilgileri"; ObjectID = "s3N-pV-4Oi"; */
+"s3N-pV-4Oi.title" = "Diş Hekimi Bilgileri";
+
+/* Class = "UIButton"; normalTitle = "Call"; ObjectID = "uXg-W0-fQ9"; */
+"uXg-W0-fQ9.normalTitle" = "Call";

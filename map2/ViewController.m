@@ -44,6 +44,7 @@
     self.locationManager.delegate = self;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     
+    
     [self.locationManager startUpdatingLocation];
     
     // Create array object and assign it to _feedItems variable
@@ -61,18 +62,28 @@
     //self.navigationController.navigationBar setTintColor:(UIColor * _Nullable);
     
     //Somon
-    UIColor *somonColour = [[UIColor alloc]initWithRed:255.0/255.0 green:102.0/255.0 blue:102.0/255.0 alpha:1.0];
+   // UIColor *somonColour = [[UIColor alloc]initWithRed:255.0/255.0 green:102.0/255.0 blue:102.0/255.0 alpha:1.0];
     
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
     
-    self.navigationController.navigationBar.barTintColor = somonColour;
+   // UIColor *lastColour = [[UIColor alloc]initWithRed:163.0/255.0 green:217.0/255.0 blue:208.0/255.0 alpha:1.0];
+    
+    //turkuaz
+    //UIColor *turkuazColour = [[UIColor alloc]initWithRed:45.0/255.0 green:255.0/255.0 blue:254.0/255.0 alpha:1.0];
+    
+    //koyu mavi
+    UIColor *boldblueColour = [[UIColor alloc]initWithRed:51.0/255.0 green:130.0/255.0 blue:171.0/255.0 alpha:1.0];
+
     
     //Cyan
-    UIColor *colour = [[UIColor alloc]initWithRed:70.0/255.0 green:178.0/255.0 blue:162.0/255.0 alpha:1.0];
+    //UIColor *colour = [[UIColor alloc]initWithRed:70.0/255.0 green:178.0/255.0 blue:162.0/255.0 alpha:1.0];
     
-    self.view.backgroundColor = colour;
+    self.navigationController.navigationBar.barTintColor = boldblueColour;
+    self.view.backgroundColor = boldblueColour;
     self.title = @"Diş Hekimleri";
-
+   
+    
+    self.searchBar.barTintColor = boldblueColour;
     
 #ifdef __IPHONE_8_0
     {
@@ -160,6 +171,7 @@
     view.canShowCallout = YES;
     
     
+    
     //image button
     UIImageView *ImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"ico-tooth.png"]];
     view.leftCalloutAccessoryView = ImageView;
@@ -194,6 +206,8 @@
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 7800, 7800);
         [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
     });
+    
+    mapView.userLocation.title = @"Konumunuz";    
    // MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 7800, 7800);
    // [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
 }
