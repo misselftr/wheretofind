@@ -65,6 +65,7 @@
         newLocation.latitude = jsonElement[@"Enlem"];
         newLocation.longitude = jsonElement[@"Boylam"];
         newLocation.phone = jsonElement[@"Telefon"];
+        newLocation.ID = jsonElement[@"ID"];
         
         // Add this question to the locations array
         [_locations addObject:newLocation];

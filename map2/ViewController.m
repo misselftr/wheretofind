@@ -20,7 +20,6 @@
     NSArray *_feedItems;
     Location *_selectedLocation;
     
-    
     NSMutableArray *locations;
     CLLocationCoordinate2D location;
     Annotation *myAnn;
@@ -124,14 +123,55 @@
         myAnn.coordinate = location;
         myAnn.title = newlot.name;
         myAnn.subtitle= newlot.address;
+        myAnn.phone = newlot.phone;
+    
         [locations addObject:myAnn];
+        
       //  NSLog(@"Value of string is %@", myAnn.title);
 
     }
     
     [self.mapView addAnnotations: locations];
+    
+}
+
+
+
+//[UIView animateWithDuration:0.2 animations:^{
+  //  CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
+  //  double yDiff = self.navigationController.navigationBar.frame.origin.y - self.navigationController.navigationBar.frame.size.height - statusBarFrame.size.height;
+ //   self.navigationController.navigationBar.frame = CGRectMake(0, yDiff, 320, self.navigationController.navigationBar.frame.size.height);
+//}]
+
+-(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar{
+    
+    //NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF beginswith[c] %@",searchBar.text];
+    
+    for(int i=0; i<_feedItems.count; i++)
+    {
+        Annotation *an = [_feedItems objectAtIndex:i];
+      if([an.title isEqualToString:[self.searchBar text]])
+        {
+           Location *newlot = _feedItems[i];
+            myAnn = [[Annotation alloc]init];
+            location.latitude = newlot.latitude.doubleValue;
+            location.longitude = newlot.longitude.doubleValue;
+            myAnn.coordinate = location;
+            myAnn.title = newlot.name;
+            myAnn.subtitle= newlot.address;
+            myAnn.phone = newlot.phone;
+            
+            [locations addObject:myAnn];
+        }
+    }
+    [self.mapView addAnnotations: locations];
 
 }
+
+-(void)searchBarTextDidEndEditing:(UISearchBar *)searchBar{
+    
+}
+
 
 //CLLocationDistance & DistanceFromLocation usage START
 /*
@@ -186,8 +226,8 @@
     MKCoordinateRegion region = { { 0.0, 0.0 }, { 0.0, 0.0 } };
     region.center.latitude = myAnn.coordinate.latitude;
     region.center.longitude = myAnn.coordinate.longitude;
-    region.span.longitudeDelta = 0.008f;
-    region.span.longitudeDelta = 0.008f;
+    region.span.longitudeDelta = 0.1f;
+    region.span.longitudeDelta = 0.1f;
     [self.mapView setRegion:region animated:YES];
 }
 
@@ -223,8 +263,7 @@ calloutAccessoryControlTapped:(UIControl *)control
 {
     //functionality for annotation button
     Annotation *ann = (Annotation *)view.annotation;
-    
-    
+
    // NSString *msg = [@"At the dentist " stringByAppendingFormat:@"%f %f", ann.coordinate.latitude, ann.coordinate.longitude];
     //_selectedLocation = ann.coordinate; //[@"%f", ann.coordinate.latitude];
     //_selectedLocation.longitude = [@"" stringByAppendingFormat:@"%f",ann.coordinate.longitude];
@@ -235,23 +274,23 @@ calloutAccessoryControlTapped:(UIControl *)control
     
     // Same As alertController but deprecated in iOS8
     
-  /*  if (SYSTEM_VERSION_LESS_THAN(@"8.0")) {
-        UIAlertView *alert =  [[UIAlertView alloc] initWithTitle:(ann.title) message:msg delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:@"Paylaş", nil];  //initWithTitle:@"Location" message:msg delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-        [alert show];
-    }
-         #ifdef __IPHONE_8_0
-        else
-    {
-        
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:ann.title message:msg preferredStyle:UIAlertControllerStyleAlert];
-        //We add buttons to the alert controller by creating UIAlertActions:
-        UIAlertAction *actionOk = [UIAlertAction actionWithTitle:@"Ok"
-                                                           style:UIAlertActionStyleDefault
-                                                         handler: nil]; //You can use a block here to handle a press on this button
-        [alert addAction:actionOk];
-        [self presentViewController:alert animated:YES completion:nil];
-   }
-    #endif */
+    /*  if (SYSTEM_VERSION_LESS_THAN(@"8.0")) {
+     UIAlertView *alert =  [[UIAlertView alloc] initWithTitle:(ann.title) message:msg delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:@"Paylaş", nil];  //initWithTitle:@"Location" message:msg delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+     [alert show];
+     }
+     #ifdef __IPHONE_8_0
+     else
+     {
+     
+     UIAlertController *alert = [UIAlertController alertControllerWithTitle:ann.title message:msg preferredStyle:UIAlertControllerStyleAlert];
+     //We add buttons to the alert controller by creating UIAlertActions:
+     UIAlertAction *actionOk = [UIAlertAction actionWithTitle:@"Ok"
+     style:UIAlertActionStyleDefault
+     handler: nil]; //You can use a block here to handle a press on this button
+     [alert addAction:actionOk];
+     [self presentViewController:alert animated:YES completion:nil];
+     }
+     #endif */
   
     
     
@@ -264,7 +303,7 @@ calloutAccessoryControlTapped:(UIControl *)control
         }
     }
     
-    */  // For customizing the button functions START
+    */  // For customizing the button functions END
     
     
 }
@@ -288,6 +327,9 @@ calloutAccessoryControlTapped:(UIControl *)control
     // Set the property to the selected location so when the view for
     // detail view controller loads, it can access that property to get the feeditem obj
     detailVC.newlyAnn = myAnn;
+  //detailVC.newlyLoc =
+    
+    
 }
 
 

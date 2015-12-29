@@ -2,12 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../map2/DetailViewController.h">
-   </FileRef>
-   <FileRef
-      location = "group:../map2/DetailViewController.m">
-   </FileRef>
-   <FileRef
       location = "self:">
    </FileRef>
 </Workspace>

@@ -24,6 +24,8 @@
 		664BB2E71C05E4CC00EB4D20 /* 80x80.png in Resources */ = {isa = PBXBuildFile; fileRef = 664BB2E41C05E4CC00EB4D20 /* 80x80.png */; };
 		664BB2E81C05E4CC00EB4D20 /* 87x87.png in Resources */ = {isa = PBXBuildFile; fileRef = 664BB2E51C05E4CC00EB4D20 /* 87x87.png */; };
 		664BB2FA1C07715700EB4D20 /* splash6.png in Resources */ = {isa = PBXBuildFile; fileRef = 664BB2F91C07715700EB4D20 /* splash6.png */; };
+		6652E8E11C0F56380031E14E /* call_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 6652E8E01C0F56380031E14E /* call_btn.png */; };
+		6652E8E31C1088E70031E14E /* splash7.png in Resources */ = {isa = PBXBuildFile; fileRef = 6652E8E21C1088E70031E14E /* splash7.png */; };
 		669DBDE61BFBC2A5002695BD /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 669DBDE21BFBC2A5002695BD /* HomeModel.m */; };
 		669DBDE71BFBC2A5002695BD /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 669DBDE51BFBC2A5002695BD /* Location.m */; };
 		66F0FA821BFCA5570055F151 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F0FA811BFCA5570055F151 /* DetailViewController.m */; };
@@ -67,6 +69,8 @@
 		664BB2E41C05E4CC00EB4D20 /* 80x80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 80x80.png; sourceTree = "<group>"; };
 		664BB2E51C05E4CC00EB4D20 /* 87x87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 87x87.png; sourceTree = "<group>"; };
 		664BB2F91C07715700EB4D20 /* splash6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash6.png; sourceTree = "<group>"; };
+		6652E8E01C0F56380031E14E /* call_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = call_btn.png; sourceTree = "<group>"; };
+		6652E8E21C1088E70031E14E /* splash7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash7.png; sourceTree = "<group>"; };
 		669DBDE21BFBC2A5002695BD /* HomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeModel.m; path = ../HomeModel.m; sourceTree = "<group>"; };
 		669DBDE31BFBC2A5002695BD /* HomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeModel.h; path = ../HomeModel.h; sourceTree = "<group>"; };
 		669DBDE41BFBC2A5002695BD /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Location.h; path = ../Location.h; sourceTree = "<group>"; };
@@ -145,9 +149,11 @@
 				664BB2E31C05E4CC00EB4D20 /* 58x58.png */,
 				664BB2E41C05E4CC00EB4D20 /* 80x80.png */,
 				664BB2F91C07715700EB4D20 /* splash6.png */,
+				6652E8E21C1088E70031E14E /* splash7.png */,
 				664562991C0CA7A000B08840 /* son1.png */,
 				664BB2E51C05E4CC00EB4D20 /* 87x87.png */,
 				664BB2DF1C05E3AE00EB4D20 /* 2x.png */,
+				6652E8E01C0F56380031E14E /* call_btn.png */,
 				664BB2E01C05E3AE00EB4D20 /* 3x.png */,
 				66F0FA881BFCD5210055F151 /* ico-tooth.png */,
 				6603879F1BF54A6100B47FAD /* Info.plist */,
@@ -259,11 +265,13 @@
 				660387AA1BF54A6100B47FAD /* Main.storyboard in Resources */,
 				664BB2E71C05E4CC00EB4D20 /* 80x80.png in Resources */,
 				664BB2E81C05E4CC00EB4D20 /* 87x87.png in Resources */,
+				6652E8E31C1088E70031E14E /* splash7.png in Resources */,
 				664BB2FA1C07715700EB4D20 /* splash6.png in Resources */,
 				660387AF1BF54A6100B47FAD /* LaunchScreen.xib in Resources */,
 				6645629A1C0CA7A000B08840 /* son1.png in Resources */,
 				66F0FA891BFCD5210055F151 /* ico-tooth.png in Resources */,
 				664BB2E61C05E4CC00EB4D20 /* 58x58.png in Resources */,
+				6652E8E11C0F56380031E14E /* call_btn.png in Resources */,
 				660387AC1BF54A6100B47FAD /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,8 +357,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: misselftr@gmail.com (6G5F8B974Y)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: ÖZLEM atabay (J46HDDP7J8)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -394,8 +401,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: misselftr@gmail.com (6G5F8B974Y)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: ÖZLEM atabay (J46HDDP7J8)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;

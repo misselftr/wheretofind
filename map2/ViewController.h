@@ -11,7 +11,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "HomeModel.h"
 
-@interface ViewController : UIViewController <MKMapViewDelegate,  CLLocationManagerDelegate, HomeModelProtocol, UIAlertViewDelegate>
+@interface ViewController : UIViewController <MKMapViewDelegate,  CLLocationManagerDelegate, HomeModelProtocol, UIAlertViewDelegate, UISearchBarDelegate>
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;

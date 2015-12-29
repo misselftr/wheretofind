@@ -15,34 +15,34 @@
 
 @interface DetailViewController ()
 {
-Annotation *myAnn;
+    Annotation *myAnn;
 }
 
 @end
 
 @implementation DetailViewController
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view. 
+    // Do any additional setup after loading the view.
     
     self.mapView.delegate = self;
     _nameLabel.text = _newlyAnn.title;
     _addressLabel.text = _newlyAnn.subtitle;
-    _contactLabel.text = @"05325177882";
+    _contactLabel.text = _newlyAnn.phone;
     
-    //Somon
-   // UIColor *somonColour = [[UIColor alloc]initWithRed:255.0/255.0 green:102.0/255.0 blue:102.0/255.0 alpha:1.0];
-   
-    //Cyan
-   // UIColor *colour = [[UIColor alloc]initWithRed:70.0/255.0 green:178.0/255.0 blue:162.0/255.0 alpha:1.0];
+   /* for (int i=0; (i=_Myitems.count); i++)
+    {
+        Location *loc = _Myitems[i];
+        
+        if (_newlyAnn.coordinate.latitude == loc.latitude.doubleValue)
+    {
+        _contactLabel.text = loc.phone;
+    }
     
-    //Soluk yeşil
-   // UIColor *lastColour = [[UIColor alloc]initWithRed:163.0/255.0 green:217.0/255.0 blue:208.0/255.0 alpha:1.0];
-    
-    //turkuaz
-   // UIColor *turkuazColour = [[UIColor alloc]initWithRed:45.0/255.0 green:255.0/255.0 blue:254.0/255.0 alpha:1.0];
-    
+    }*/
     //koyu mavi
     UIColor *boldblueColour = [[UIColor alloc]initWithRed:51.0/255.0 green:130.0/255.0 blue:171.0/255.0 alpha:1.0];
     
@@ -188,8 +188,15 @@ Annotation *myAnn;
 
 - (IBAction)callBtn:(id)sender {
     
-    //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"telprompt: %s",(_contactLabel.text)]];
+  // NSString *number = [@"telprompt://" stringByAppendingString:_contactLabel.text];
+    //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:number]];
     
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"telprompt://%@",_contactLabel.text]]];
-    }
+    
+    
+    //   [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"telprompt:05306654347"]];
+    
+    
+}
+
 @end

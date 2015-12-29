@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *addressLabel;
 @property (weak, nonatomic) IBOutlet UILabel *contactLabel;
+@property (weak, nonatomic) IBOutlet UILabel *professionLabel;
 
 - (IBAction)backBtn:(id)sender;
 - (IBAction)gotoBtn:(id)sender;
